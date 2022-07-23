@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import Projects from './components/Projects';
 import ContactForm from './components/Contact';
 import Footer from './components/Footer';
+import Resume from './components/Resume';
 
 function App() {
 
@@ -28,9 +29,12 @@ function App() {
           (currentTab === "Projects") ? (
             <Projects></Projects>
           ) : (
+            (currentTab === "Resume") ? (
+              <Resume></Resume>
+            ) : (
             <ContactForm></ContactForm>
           )
-        )}
+        ))}
       </main>
       
       <Footer></Footer>

@@ -22,13 +22,16 @@ function Nav(props) {
             <nav>
                 <ul className='flex-row'>
                     <li className={`mx-2 ${currentTab === "About" && 'navActive'}`}>
-                        <span onClick={() => setCurrentTab("About")}>About Me</span>
+                        <h6 onClick={() => setCurrentTab("About")}>About Me</h6>
                     </li>
                     <li className={`mx-2 ${currentTab === "Projects" && 'navActive'}`}>
-                        <span onClick={() => setCurrentTab("Projects")}>Projects</span>
+                        <h6 onClick={() => setCurrentTab("Projects")}>Projects</h6>
+                    </li>
+                    <li className={`mx-2 ${currentTab === "Resume" && 'navActive'}`}>
+                        <h6 onClick={() => setCurrentTab("Resume")}>Resume</h6>
                     </li>
                     <li className={`mx-2 ${currentTab === "Contact" && 'navActive'}`}>
-                        <span onClick={() => setCurrentTab("Contact")}>Contact</span>
+                        <h6 onClick={() => setCurrentTab("Contact")}>Contact</h6>
                     </li>
                 </ul>
             </nav>
