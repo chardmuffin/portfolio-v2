@@ -4,6 +4,7 @@ import About from './components/About';
 import Nav from './components/Nav';
 import Projects from './components/Projects';
 import ContactForm from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -17,6 +18,9 @@ function App() {
         currentTab={currentTab}
         setCurrentTab={setCurrentTab}
       ></Nav>
+      <section className="hero-container">
+        <div className="hero"></div>
+      </section>
       <main>
         {(currentTab === "About") ? (
           <About></About>
@@ -28,6 +32,8 @@ function App() {
           )
         )}
       </main>
+      
+      <Footer></Footer>
     </div>
   );
 };
