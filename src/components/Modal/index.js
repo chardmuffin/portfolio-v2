@@ -2,13 +2,13 @@ import React from "react";
 
 function Modal({ onClose, currentProject }) {
 
-  const {name, tags, description, index} = currentProject;
+  const {name, tags, description, link, photo} = currentProject;
 
   return (
     <div className="modalBackdrop">
       <div className="modalContainer">
         <h3 className="modalTitle">{name}</h3>
-        <img alt={tags} src={require(`../../assets/small/${index}.jpg`)}/>
+        <img alt={name} onclick={window.open(link, '_blank')} src={require(`../../assets/portfolio/${photo}`)}/>
         <p>
           {description}
         </p>
