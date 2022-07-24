@@ -36,7 +36,6 @@ function App() {
           )
         ))}
       </main>
-      
       <Footer></Footer>
     </div>
   );

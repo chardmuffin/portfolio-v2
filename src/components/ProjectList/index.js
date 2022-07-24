@@ -1,36 +1,35 @@
-import React, { useState } from 'react';
-import Modal from '../Modal';
+import React from 'react';
 
 function ProjectList() {
 
-    const [projects] = useState([
+    const projects = [
         {
             name: 'Chasing Dreams',
-            tags: 'MERN',
+            tags: 'MERN stack',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
             link: 'https://chasing-dreams.herokuapp.com/',
             photo: 'chasing-dreams.png'
         },
         {
-            name: 'Project2',
-            tags: 'commercial',
+            name: 'Mental Health Buddy',
+            tags: 'HTML, CSS, Javascript',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
-            link: '',
-            photo: '0.jpg'
+            link: 'https://chardmuffin.github.io/mental-health-buddy/',
+            photo: 'mental-health-buddy.png'
         },
         {
-            name: 'Project3',
-            tags: 'commercial',
+            name: 'Code Probe',
+            tags: 'HTML, CSS, Javascript',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
-            link: '',
-            photo: '0.jpg'
+            link: 'https://chardmuffin.github.io/code-probe/',
+            photo: 'code-probe.png'
         },
         {
-            name: 'Project4',
-            tags: 'commercial',
+            name: 'Weather Pal',
+            tags: 'HTML, CSS, Javascript',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
-            link: '',
-            photo: '0.jpg'
+            link: 'https://chardmuffin.github.io/weather-pal/',
+            photo: 'weather-pal.png'
         },
         {
             name: 'Project5',
@@ -46,31 +45,29 @@ function ProjectList() {
             link: '',
             photo: '0.jpg'
         }
-    ]);
+    ];
 
-    const [currentProject, setCurrentProject] = useState();
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const toggleModal = (project) => {
-        setCurrentProject({ ...project});
-        setIsModalOpen(!isModalOpen);
+    function triggerHandler(e, project) {
+        e.preventDefault();
+        window.open(project.link, '_blank');
     }
     
     return (
-        <div>
-            {isModalOpen && <Modal currentProject={currentProject} onClose={toggleModal} />}
             <div className='flex-row'>
                 {projects.map((project) => (
-                    <img
-                        src={require(`../../assets/portfolio/${project.photo}`)}
-                        alt={project.name}
-                        className="img-thumbnail mx-1"
-                        onClick={() => toggleModal(project)}
-                        key={project.name}
-                    />
+                    <div className='card'>
+                        <div className='img-div'>
+                            <img
+                            src={require(`../../assets/portfolio/${project.photo}`)}
+                            alt={project.name}
+                            className="img-thumbnail mx-1"
+                            key={project.name}
+                            />
+                        </div>
+                        <div className='details' onClick={(e) => triggerHandler(e, project)}>here are some details</div>
+                    </div>
                 ))}
             </div>
-        </div>
     );
 };
 
