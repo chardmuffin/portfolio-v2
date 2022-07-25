@@ -53,7 +53,7 @@ function ProjectList() {
     }
     
     return (
-        <div className='flex-row'>
+        <div className='flex-row space-around'>
             {projects.map((project) => (
                 <div className='card'>
                     <div className='img-div'>

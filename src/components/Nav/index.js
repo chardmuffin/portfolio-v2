@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import ReactTypingEffect from 'react-typing-effect';
 
 function Nav(props) {
 
@@ -14,11 +15,15 @@ function Nav(props) {
 
     return (
         <header className="flex-row px-1">
-            <h2>
-                <a href='/'>
-                    <span role="img" aria-label='camera'></span> Hello World!
-                </a>
-            </h2>
+            <h1>
+                <ReactTypingEffect
+                    text={[`print("Hello World!")`, `System.out.println("Hello World!");`, `console.log("Hello World!");`]}
+                    onClick={() => setCurrentTab("About")}
+                    speed={150}
+                    eraseSpeed={80}
+                    typingDelay={300}
+                />
+            </h1>
             <nav>
                 <ul className='flex-row'>
                     <li className={`mx-2 ${currentTab === "About" && 'navActive'}`}>
