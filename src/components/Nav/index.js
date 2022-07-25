@@ -30,7 +30,7 @@ function Nav(props) {
                         <h6 onClick={() => setCurrentTab("About")}>About Me</h6>
                     </li>
                     <li className={`mx-2 ${currentTab === "Projects" && 'navActive'}`}>
-                        <h6 onClick={() => setCurrentTab("Projects")}>Projects</h6>
+                        <h6 onClick={() => setCurrentTab("Projects")}>Portfolio</h6>
                     </li>
                     <li className={`mx-2 ${currentTab === "Resume" && 'navActive'}`}>
                         <h6 onClick={() => setCurrentTab("Resume")}>Resume</h6>
