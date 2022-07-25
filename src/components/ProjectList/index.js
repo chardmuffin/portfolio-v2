@@ -39,7 +39,7 @@ function ProjectList() {
     }
     
     return (
-        <div className='grid-container'>
+        <div className='two-columns projects'>
             {projects.map((project) => (
                 <div className='card'>
                     <div className='img-div'>

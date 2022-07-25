@@ -88,6 +88,10 @@ p {
   margin-top: 0;
 }
 
+ul {
+  margin: 0;
+}
+
 header {
   background: var(--dark);
   position: relative;
@@ -110,6 +114,10 @@ nav {
   margin-left: auto;
 }
 
+nav ul {
+  margin: 20px 0px;
+}
+
 .navActive {
   color: var(--primary);
 }
@@ -119,7 +127,7 @@ nav {
 }
 
 .underline {
-  width: 30%;
+  width: 40%;
   margin: 10px auto 60px;
   border-bottom: 2px solid var(--primary);
 }
@@ -179,10 +187,15 @@ footer span {
   margin: auto auto;
 }
 
+.about p {
+  font-size: 1.1rem;
+}
+
 .headshot {
   width: 234px;
   border-radius: 50%;
   box-shadow: 0 0 10px 12px rgba(0, 5, 14, 0.5);
+  margin: 20px 100px;
 }
 
 form {
@@ -215,19 +228,20 @@ nav li {
   cursor: pointer;
 }
 
-.grid-container {
-  display: inline-grid;
-  gap: 50px 0px;
-  grid-template-columns: 50% 50%;
-  width: 100%;
+.two-columns {
+  column-count: 2;
+}
+
+.projects {
+  width: 70%;
+  column-gap: 5%;
+  margin: auto;
 }
 
 .card {
-  place-self: center;
   top: 2px;
   left: 2px;
   transform: translate(-2px,-2px);
-  width: 400px;
   height: 330px;
   overflow: hidden;
   margin: auto;
@@ -243,6 +257,7 @@ nav li {
 .card .img-div {
   top: 0;
   left: 0;
+  width: 100%;
 }
 
 .card:hover .img-div {
@@ -305,6 +320,11 @@ textarea {
 	height: 120px;
 	border: 3px solid #cccccc;
 	padding: 5px;
+}
+
+.skills-container {
+  margin: auto;
+  width: 80%;
 }
 
 .container {

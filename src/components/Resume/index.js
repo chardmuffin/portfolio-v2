@@ -4,54 +4,58 @@ function Resume() {
 
   return (
     <section className='my-2'>
-      <h2 className='centerText'>Skills & Proficiencies</h2>
+      <h2 className='centerText'>skills & proficiencies</h2>
       <div className='underline'></div>
-      <ul>
-        <li>
-          MERN (MongoDB, Express.js, React, Node.js)
-        </li>
-        <li>
-          MySQL
-        </li>
-        <li>
-          Javascript
-        </li>
-        <li>
-          JQuery
-        </li>
-        <li>
-          CSS
-        </li>
-        <li>
-          Bootstrap
-        </li>
-        <li>
-          HTML
-        </li>
-        <li>
-          Python
-        </li>
-        <li>
-          Java
-        </li>
-        <li>
-          GitHub
-        </li>
-        <li>
-          Jira
-        </li>
-        <li>
-          Salesforce
-        </li>
-        <li>
-          Project Management
-        </li>
-        <li>
-          Oral and Written Communication
-        </li>
-      </ul>
+      <div className="two-columns skills-container">
+        <ul>
+          <li>
+            MERN (MongoDB, Express.js, React, Node.js)
+          </li>
+          <li>
+            MySQL
+          </li>
+          <li>
+            Javascript
+          </li>
+          <li>
+            JQuery
+          </li>
+          <li>
+            CSS
+          </li>
+          <li>
+            Bootstrap
+          </li>
+          <li>
+            HTML
+          </li>
+          <li>
+            Python
+          </li>
+          <li>
+            Java
+          </li>
+          <li>
+            GitHub
+          </li>
+          <li>
+            Jira
+          </li>
+          <li>
+            Salesforce
+          </li>
+          <li>
+            Project Management
+          </li>
+          <li>
+            Oral and Written Communication
+          </li>
+        </ul>
+      </div>
+      <br></br>
+      <br></br>
       <a href={require("../../assets/resume.pdf")} download="resume-RHuffman">
-        <button className="mx-auto">DOWNLOAD RESUME</button>
+        <button className="mx-auto my-5">DOWNLOAD RESUME</button>
       </a>
     </section>
   )
