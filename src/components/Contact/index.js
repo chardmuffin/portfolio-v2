@@ -35,7 +35,7 @@ function ContactForm() {
 
     return (
         <section>
-            <h1 className='centerText'>Contact me</h1>
+            <h1 className='centerText'>contact me</h1>
             <div className='underline'></div>
             <p>
                 Please leave me a message!

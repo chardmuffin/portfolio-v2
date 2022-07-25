@@ -19,8 +19,8 @@ function Nav(props) {
                 <ReactTypingEffect
                     text={[`print("Hello World!")`, `System.out.println("Hello World!");`, `console.log("Hello World!");`]}
                     onClick={() => setCurrentTab("About")}
-                    speed={150}
-                    eraseSpeed={80}
+                    speed={200}
+                    eraseSpeed={60}
                     typingDelay={300}
                 />
             </h1>
