@@ -65,6 +65,7 @@ function ProjectList() {
                         />
                     </div>
                     <div className='details' onClick={(e) => triggerHandler(e, project)}>
+                        <p><span>{project.name}</span></p>
                         <p>
                             <span>></span>{project.tags}
                         </p>
