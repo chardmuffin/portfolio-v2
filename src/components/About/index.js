@@ -3,10 +3,12 @@ import headshot from '../../assets/cover/headshot.jpg';
 
 function About() {
     return (
-        <section className='my-2'>
-            <h1>Who am I?</h1>
-            <p className='my-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra diam sit amet nisl suscipit. Accumsan lacus vel facilisis volutpat est velit egestas dui. Eget lorem dolor sed viverra ipsum nunc aliquet. Sem viverra aliquet eget sit amet tellus cras adipiscing. Curabitur vitae nunc sed velit dignissim. Nunc sed velit dignissim sodales ut eu. Duis ultricies lacus sed turpis tincidunt id aliquet risus. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat. Elit eget gravida cum sociis natoque penatibus et. Urna condimentum mattis pellentesque id nibh tortor id aliquet. Elit ut aliquam purus sit. Malesuada proin libero nunc consequat interdum. Magna sit amet purus gravida quis blandit turpis. Ultrices eros in cursus turpis massa tincidunt dui ut.</p>
-            <img src={headshot} className="headshot my-5 mx-auto" alt="headshot" />
+        <section className='about'>
+            <h1 className='centerText'>About Me</h1>
+            <div className='underline'></div>
+            <img src={headshot} className="headshot float-right" alt="headshot" />
+            <p className='my-5'>I'm Richard Huffman, a Full Stack Web Developer who is passionate about finding elegant solutions to complex problems. I completed the UNC-Chapel Hill Coding Bootcamp in July 2022, where I gained hands-on experience using Browser Based Technologies, Databases, Server Side Development, and API Interaction. The course was a great supplement to my familiarity with Object-Oriented Programming from my college studies. Check out my Portfolio page for some examples of my recent work!</p>
+            <p>Outside the office, my hobbies/interests include swimming, cooking and eating food, watching movies, drawing and painting, reading philosophy, and playing chess, but my favorite thing to do in my free time is play piano. I am always learning new things and being productive!</p>
         </section>
     );
 }

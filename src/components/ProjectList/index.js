@@ -30,20 +30,6 @@ function ProjectList() {
             description: 'Utlizes OpenWeatherMap API to provide a summary of the current weather and a 5-day forecast for any major city.',
             link: 'https://chardmuffin.github.io/weather-pal/',
             photo: 'weather-pal.png'
-        },
-        {
-            name: 'Project5',
-            tags: 'commercial',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
-            link: '',
-            photo: '0.jpg'
-        },
-        {
-            name: 'Project6',
-            tags: 'portraits',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
-            link: '',
-            photo: '0.jpg'
         }
     ];
 
@@ -53,7 +39,7 @@ function ProjectList() {
     }
     
     return (
-        <div className='flex-row space-around'>
+        <div className='grid-container'>
             {projects.map((project) => (
                 <div className='card'>
                     <div className='img-div'>

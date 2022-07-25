@@ -4,7 +4,8 @@ function Resume() {
 
   return (
     <section className='my-2'>
-      <h2>Skills & Proficiencies</h2>
+      <h2 className='centerText'>Skills & Proficiencies</h2>
+      <div className='underline'></div>
       <ul>
         <li>
           MERN (MongoDB, Express.js, React, Node.js)
@@ -13,13 +14,16 @@ function Resume() {
           MySQL
         </li>
         <li>
-          NoSQL
-        </li>
-        <li>
           Javascript
         </li>
         <li>
+          JQuery
+        </li>
+        <li>
           CSS
+        </li>
+        <li>
+          Bootstrap
         </li>
         <li>
           HTML
@@ -46,6 +50,9 @@ function Resume() {
           Oral and Written Communication
         </li>
       </ul>
+      <a href={require("../../assets/resume.pdf")} download="resume-RHuffman">
+        <button className="mx-auto">DOWNLOAD RESUME</button>
+      </a>
     </section>
   )
 
