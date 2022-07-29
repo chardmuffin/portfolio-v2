@@ -13,7 +13,7 @@ function ProjectList() {
         {
             name: 'Mental Health Buddy',
             tags: 'HTML, CSS, Javascript',
-            description: 'Mental Health Buddy displays quotes from any of these categories: advice slips, dad jokes, zen quotes, stoicism quotes, and Kanye quotes. Also allows users to create daily TODO list.',
+            description: 'Mental Health Buddy displays quotes from any of these categories: advice slips, dad jokes, zen quotes, stoicism quotes, and Kanye quotes. (A different API is leveraged for each category.) Also allows users to create daily TODO list.',
             link: 'https://chardmuffin.github.io/mental-health-buddy/',
             photo: 'mental-health-buddy.png'
         },
@@ -41,13 +41,12 @@ function ProjectList() {
     return (
         <div className='two-columns projects'>
             {projects.map((project) => (
-                <div className='card'>
+                <div className='card' key={project.name}>
                     <div className='img-div'>
                         <img
                         src={require(`../../assets/portfolio/${project.photo}`)}
                         alt={project.name}
                         className="img-thumbnail mx-1"
-                        key={project.name}
                         />
                     </div>
                     <div className='details' onClick={(e) => triggerHandler(e, project)}>
