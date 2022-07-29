@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/portfolio-v2/static/css/main.df090af7.css",
-    "main.js": "/portfolio-v2/static/js/main.a73c6b7e.js",
+    "main.css": "/portfolio-v2/static/css/main.eed780b1.css",
+    "main.js": "/portfolio-v2/static/js/main.c068dfca.js",
     "static/js/787.d9a20797.chunk.js": "/portfolio-v2/static/js/787.d9a20797.chunk.js",
-    "static/media/metamorphose.jpg": "/portfolio-v2/static/media/metamorphose.454a961390ac981da58e.jpg",
+    "static/media/metamorphose-min.jpg": "/portfolio-v2/static/media/metamorphose-min.bd7b2e50ba647a58961a.jpg",
     "static/media/chasing-dreams.png": "/portfolio-v2/static/media/chasing-dreams.a159faf57fa1a13614fc.png",
     "static/media/resume.pdf": "/portfolio-v2/static/media/resume.e2f5f2da6b95168cebbb.pdf",
     "static/media/0.jpg": "/portfolio-v2/static/media/0.943044a74b8e619632e4.jpg",
@@ -12,12 +12,12 @@
     "static/media/code-probe.png": "/portfolio-v2/static/media/code-probe.507b2eb27bdb5fe56744.png",
     "static/media/headshot.jpg": "/portfolio-v2/static/media/headshot.ab4416b5d3a4f5cd543a.jpg",
     "index.html": "/portfolio-v2/index.html",
-    "main.df090af7.css.map": "/portfolio-v2/static/css/main.df090af7.css.map",
-    "main.a73c6b7e.js.map": "/portfolio-v2/static/js/main.a73c6b7e.js.map",
+    "main.eed780b1.css.map": "/portfolio-v2/static/css/main.eed780b1.css.map",
+    "main.c068dfca.js.map": "/portfolio-v2/static/js/main.c068dfca.js.map",
     "787.d9a20797.chunk.js.map": "/portfolio-v2/static/js/787.d9a20797.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df090af7.css",
-    "static/js/main.a73c6b7e.js"
+    "static/css/main.eed780b1.css",
+    "static/js/main.c068dfca.js"
   ]
 }
