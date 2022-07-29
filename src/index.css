@@ -6,10 +6,10 @@ main {
   margin-bottom: 100px;
 }
 :root {
-  --primary: #00aac4;
-  --secondary: #F3A847;
+  --primary: #858AE3;
+  --secondary: #C5E7CB;
   --tertiary: #B12704;
-  --light: #ffecd1;
+  --light: #F0E1D1;
   --dark: #00080e;
   --darker: #111111;
   --error: rgb(228, 46, 1);
@@ -96,12 +96,13 @@ header {
   background: var(--dark);
   position: relative;
   width: 100%;
+  color: var(--secondary);
 }
 
 header h1 {
   color: var(--light);
   font-family: "Courier Prime", "Courier New";
-  font-size: 30px;
+  font-size: 15px;
   margin: auto 0;
   cursor: pointer;
 }
@@ -140,10 +141,11 @@ nav ul {
 }
 
 .hero {
-  background: url("./assets/cover/metamorphose.jpg") repeat-x;
+  background: url("./assets/cover/metamorphose-min.jpg") repeat-x;
   height: 453px;
   width: 27321px;
   animation: slide 180s linear infinite;
+  background-attachment: fixed;
 }
 
 @keyframes slide{
@@ -192,10 +194,11 @@ footer span {
 }
 
 .headshot {
-  width: 234px;
+  width: 12.5rem;
   border-radius: 50%;
   box-shadow: 0 0 10px 12px rgba(0, 5, 14, 0.5);
-  margin: 20px 100px;
+  margin: 20px 50px;
+  filter: brightness(65%);
 }
 
 form {
@@ -408,4 +411,66 @@ textarea {
 
 .float-left {
   float: left;
+}
+
+/* handle the nav bar*/
+@media screen and (max-width: 950px) {
+
+  main {
+    max-width: 100%;
+    padding: 50px 0px;
+    margin-bottom: 100px;
+  }
+
+  .about {
+    width: 80%;
+  }
+
+  .underline {
+    width: 70%;
+  }
+
+  .about p {
+    font-size: .9rem;
+    margin-top: var(--spacing-one);
+  }
+
+  section {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+}
+
+
+/* if using mobile */
+@media screen and (max-width: 575px) {
+
+  main {
+    margin-bottom: 300px;
+  }
+
+  header h1 {
+    font-size: 10px;
+  }
+
+  .headshot {
+    width: 50%;
+    float: none;
+    position: fixed;
+    z-index: -1;
+    filter: grayscale(50%) brightness(20%);
+    bottom: 0;
+    right: -15%;
+    bottom: 20%;
+  }
+
+  .underline {
+    width: 90%;
+    margin: 5px auto 30px;
+  }
+
+  .two-columns {
+    column-count: 1;
+  }
 }
