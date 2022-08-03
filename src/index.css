@@ -8,10 +8,10 @@ main {
 :root {
   --primary: #858AE3;
   --secondary: #C5E7CB;
-  --tertiary: #B12704;
+  --tertiary: #6E0C3C;
   --light: #F0E1D1;
   --dark: #00080e;
-  --darker: #111111;
+  --darker: #000000;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -182,6 +182,9 @@ footer span {
   position: absolute;
   bottom: 0;
   right: 0;
+  left: 0;
+  text-align: center;
+  color: var(--tertiary);
 }
 
 .about {
@@ -414,6 +417,11 @@ textarea {
 }
 
 /* handle the nav bar*/
+.mobile-title {
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+}
 @media screen and (max-width: 950px) {
 
   main {
@@ -422,8 +430,20 @@ textarea {
     margin-bottom: 100px;
   }
 
+  footer {
+    position: relative;
+    bottom: 0;
+  }
+
   .about {
     width: 80%;
+  }
+
+/* at this width and below, headshot is moved to bottom of <section> in components/About/index.js */
+  .headshot {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .underline {
@@ -446,23 +466,12 @@ textarea {
 /* if using mobile */
 @media screen and (max-width: 575px) {
 
-  main {
-    margin-bottom: 300px;
-  }
-
   header h1 {
     font-size: 10px;
   }
 
   .headshot {
     width: 50%;
-    float: none;
-    position: fixed;
-    z-index: -1;
-    filter: grayscale(50%) brightness(20%);
-    bottom: 0;
-    right: -15%;
-    bottom: 20%;
   }
 
   .underline {

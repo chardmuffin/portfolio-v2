@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ProjectList from "../ProjectList";
+import { useSwiperSlide } from 'swiper/react';
 
-function Projects() {
+function Projects({ setCurrentTab }) {
+
+    const swiperSlide = useSwiperSlide();
+
+    useEffect(() => {
+        swiperSlide?.isActive && setCurrentTab("Projects");
+    }, [setCurrentTab, swiperSlide]);
 
     return (
         <section>

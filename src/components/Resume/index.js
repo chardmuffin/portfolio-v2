@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSwiperSlide } from 'swiper/react';
 
-function Resume() {
+function Resume({ setCurrentTab }) {
+
+  const swiperSlide = useSwiperSlide();
+
+  useEffect(() => {
+    swiperSlide?.isActive && setCurrentTab("Resume");
+  }, [setCurrentTab, swiperSlide]);
 
   return (
     <section className='my-2'>
