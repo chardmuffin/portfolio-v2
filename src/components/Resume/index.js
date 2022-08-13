@@ -1,17 +1,10 @@
-import React, { useEffect } from "react";
-import { useSwiperSlide } from 'swiper/react';
 
-function Resume({ setCurrentTab }) {
 
-  const swiperSlide = useSwiperSlide();
-
-  useEffect(() => {
-    swiperSlide?.isActive && setCurrentTab("Resume");
-  }, [setCurrentTab, swiperSlide]);
+function Resume() {
 
   return (
     <section className='my-2'>
-      <h2 className='centerText'>skills & proficiencies</h2>
+      <h2 className='centerText'>resume</h2>
       <div className='underline'></div>
       <div className="two-columns skills-container">
         <ul>

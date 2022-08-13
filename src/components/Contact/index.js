@@ -1,14 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { validateEmail } from "../../utils/helpers";
-import { useSwiperSlide } from 'swiper/react';
 
-function ContactForm({ setCurrentTab }) {
-
-    const swiperSlide = useSwiperSlide();
-
-    useEffect(() => {
-        swiperSlide?.isActive && setCurrentTab("Contact");
-    }, [setCurrentTab, swiperSlide]);
+function ContactForm() {
 
     const [formState, setFormState] = useState({ name: "", email: "", message: "" });
     const { name, email, message } = formState;

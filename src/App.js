@@ -7,12 +7,6 @@ import ContactForm from './components/Contact';
 import Footer from './components/Footer';
 import Resume from './components/Resume';
 
-// for mobile-
-// import styles
-import 'swiper/css';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
 function App() {
 
   const [currentTab, setCurrentTab] = useState("About");
@@ -36,10 +30,10 @@ function App() {
     mobileUI: width <= 950
   }
 
+  // if something is different for mobileUI, use (responsive.mobileUI) ? (...) : (...)
   return (
     <div>
       <Nav
-        mobileUI={responsive.mobileUI}
         currentTab={currentTab}
         setCurrentTab={setCurrentTab}
       ></Nav>
@@ -47,43 +41,9 @@ function App() {
         <div className="hero"></div>
       </section>
       <main>
-        {/* do a carousel for mobile */}
-        {(responsive.mobileUI) ? (
-          <Swiper
-            spaceBetween={80}
-            slidesPerView={1}
-          >
-            <SwiperSlide>
-              <About
-                mobileUI={responsive.mobileUI}
-                setCurrentTab={setCurrentTab}
-              ></About>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <Projects
-                setCurrentTab={setCurrentTab}
-              ></Projects>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <Resume
-                setCurrentTab={setCurrentTab}
-              ></Resume>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <ContactForm
-                setCurrentTab={setCurrentTab}
-              ></ContactForm>
-            </SwiperSlide>
-          </Swiper>
-        ) :
-        
-        // if not on mobile
-        (
-          (currentTab === "About") ? (
-          <About></About>
+        {responsive.mobileUI && <div className='my-5 py-5'></div>}
+        {(currentTab === "About") ? (
+          <About mobileUI={responsive.mobileUI}></About>
         ) : (
           (currentTab === "Projects") ? (
             <Projects></Projects>
@@ -92,8 +52,9 @@ function App() {
               <Resume></Resume>
             ) : (
             <ContactForm></ContactForm>
+            )
           )
-        )))}
+        )}
       </main>
       <Footer></Footer>
     </div>
