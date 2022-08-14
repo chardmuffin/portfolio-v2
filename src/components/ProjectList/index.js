@@ -9,7 +9,7 @@ function ProjectList( { setCurrentTab, mobileUI } ) {
         {
             name: 'WIP - Bar Book',
             tags: 'MongoDB, Express, React, Node, CSS, Apollo GraphQL',
-            description: `Bar Book is a mobile webapp I am working on that will make it easy to quickly look up cocktail recipes. React-Bootstrap components are a starting point when building this mobile-first UI. Recipe search results are fetched from "TheCocktailDB.com" API.`,
+            description: `Bar Book is a mobile webapp that makes it easy to quickly look up cocktail recipes. React-Bootstrap components are a starting point when building the mobile-first UI. Recipe search results are fetched by API.`,
             link: 'https://bar-book.herokuapp.com/',
             repo: 'https://github.com/chardmuffin/bar-book',
             photo: 'bar-book.png'
@@ -69,10 +69,10 @@ function ProjectList( { setCurrentTab, mobileUI } ) {
                             </p>
                             <div className='buttons'>
                                 <a href={project.link} target="_blank" rel="noreferrer">
-                                    <button>Deployed Site <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
+                                    <button>Deployed Site<br></br><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
                                 </a>
                                 <a href={project.repo} target="_blank" rel="noreferrer">
-                                    <button><FontAwesomeIcon icon={faGithubSquare} /> Source Code</button>
+                                    <button><FontAwesomeIcon icon={faGithubSquare} /><br></br>Source Code</button>
                                 </a>
                             </div>
                         </div>
