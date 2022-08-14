@@ -7,15 +7,9 @@ import ContactForm from './components/Contact';
 import Footer from './components/Footer';
 import Resume from './components/Resume';
 
-// for mobile-
-// import styles
-import 'swiper/css';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
 function App() {
 
-  const [currentTab, setCurrentTab] = useState("About");
+  const [currentTab, setCurrentTab] = useState("about");
 
   const [width, setWindowWidth] = useState(0);
 
@@ -36,10 +30,10 @@ function App() {
     mobileUI: width <= 950
   }
 
+  // if something is different for mobileUI, use (responsive.mobileUI) ? (...) : (...)
   return (
     <div>
       <Nav
-        mobileUI={responsive.mobileUI}
         currentTab={currentTab}
         setCurrentTab={setCurrentTab}
       ></Nav>
@@ -47,53 +41,11 @@ function App() {
         <div className="hero"></div>
       </section>
       <main>
-        {/* do a carousel for mobile */}
-        {(responsive.mobileUI) ? (
-          <Swiper
-            spaceBetween={80}
-            slidesPerView={1}
-          >
-            <SwiperSlide>
-              <About
-                mobileUI={responsive.mobileUI}
-                setCurrentTab={setCurrentTab}
-              ></About>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <Projects
-                setCurrentTab={setCurrentTab}
-              ></Projects>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <Resume
-                setCurrentTab={setCurrentTab}
-              ></Resume>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <ContactForm
-                setCurrentTab={setCurrentTab}
-              ></ContactForm>
-            </SwiperSlide>
-          </Swiper>
-        ) :
-        
-        // if not on mobile
-        (
-          (currentTab === "About") ? (
-          <About></About>
-        ) : (
-          (currentTab === "Projects") ? (
-            <Projects></Projects>
-          ) : (
-            (currentTab === "Resume") ? (
-              <Resume></Resume>
-            ) : (
-            <ContactForm></ContactForm>
-          )
-        )))}
+        {responsive.mobileUI && <div className='my-5 py-5'></div>}
+        <About setCurrentTab={setCurrentTab}></About>
+        <Projects setCurrentTab={setCurrentTab} mobileUI={responsive.mobileUI}></Projects>
+        <Resume setCurrentTab={setCurrentTab}></Resume>
+        <ContactForm setCurrentTab={setCurrentTab}></ContactForm>
       </main>
       <Footer></Footer>
     </div>

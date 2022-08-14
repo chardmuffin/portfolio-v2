@@ -1,20 +1,15 @@
-import React, { useEffect } from 'react';
 import ProjectList from "../ProjectList";
-import { useSwiperSlide } from 'swiper/react';
+import FadeIn from "../FadeIn";
 
-function Projects({ setCurrentTab }) {
-
-    const swiperSlide = useSwiperSlide();
-
-    useEffect(() => {
-        swiperSlide?.isActive && setCurrentTab("Projects");
-    }, [setCurrentTab, swiperSlide]);
+function Projects({ setCurrentTab, mobileUI }) {
 
     return (
-        <section>
-            <h1 className='centerText'>my projects</h1>
-            <div className='underline'></div>
-            <ProjectList></ProjectList>
+        <section id="projects">
+            <FadeIn>
+                <h1 className='portfolio centerText'>my projects</h1>
+                <div className='underline'></div>
+            </FadeIn>
+            <ProjectList setCurrentTab={setCurrentTab} mobileUI={mobileUI}></ProjectList>
         </section>
     );
 };
