@@ -12,11 +12,10 @@ main {
   --light: #F0E1D1;
   --dark: #00080e;
   --darker: #000000;
-  --error: rgb(228, 46, 1);
+  --error: #F84825;
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
   --spacing-five: calc(2.5rem);
-
 }
 
 * {
@@ -64,10 +63,12 @@ h2 {
 
 h3 {
   font-size: 1.75rem;
+  color: var(--primary)
 }
 
 h4 {
   font-size: 1.5rem;
+  color: var(--primary)
 }
 
 h5 {
@@ -97,6 +98,7 @@ header {
   position: fixed;
   width: 100%;
   color: var(--secondary);
+  z-index: 9999;
 }
 
 header h1 {
@@ -123,20 +125,38 @@ nav ul {
   color: var(--primary);
 }
 
+.fade-in {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 1000ms ease-out,
+    visibility 1000ms ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 70ms;
+}
+
 .centerText {
   text-align: center;
+  padding-top: 150px;
 }
 
 .underline {
-  width: 40%;
+  width: 30%;
   margin: 10px auto 60px;
   border-bottom: 2px solid var(--primary);
+}
+.small {
+  width: 20%;
 }
 
 .hero-container {
   overflow: hidden;
   position: fixed;
-  opacity: 0.10;
+  opacity: 0.04;
   z-index: -1;
   margin: auto 0;
   display: flex;
@@ -209,24 +229,6 @@ footer span {
   filter: brightness(65%);
 }
 
-form {
-  width: 40%;
-}
-
-input {
-  font-size: 1rem;
-  padding: 0.25rem;
-  border: 1px solid var(--dark);
-  outline: none;
-  border-radius: 3px;
-  transition: box-shadow 0.2s;
-}
-
-input:focus {
-  border: 1px solid var(--secondary);
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
-}
-
 li {
   list-style: none;
 }
@@ -248,52 +250,40 @@ nav li {
   margin: auto;
 }
 
-.card:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
 .card {
   height: auto;
   margin: auto;
-  padding: 20px 0;
-  display: flex;
-  flex-direction: row;
-}
-
-.img-div {
-  flex: 1 1 0;
-}
-
-.img-thumbnail {
-  max-width: 100%;
+  padding: 40px 0;
 }
 
 .card .details {
-  flex: 1 1 0;
-  padding: 10px 30px;
-  text-align: justify;
+
 }
 
-.card .details p {
-  margin-bottom: 10px;
+.img-thumbnail {
+  max-width: 45%;
+  max-height: 350px;
+  margin: 20px;
+}
+
+.card p {
   color: var(--light);
 }
 
-.card .details p span {
+.card p span {
   color: var(--primary);
   margin: 0 15px;
   font-size: 1rem;
 }
 
-.card .details a {
-  display: inline-block;
-  padding: 20px;
-}
-
 .buttons {
   display: flex;
   flex-direction: row;
-  justify-content:center;
+  justify-content: center;
+}
+
+.buttons a {
+  padding: 10px;
 }
 
 button {
@@ -312,11 +302,44 @@ button:hover {
   transform: scale(1.1); 
 }
 
+form {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form a {
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.25rem;
+  border: 1px solid var(--dark);
+  outline: none;
+  border-radius: 3px;
+  transition: box-shadow 0.2s;
+}
+
+input:focus {
+  border: 1px solid var(--secondary);
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
+}
+
 textarea {
-	width: 600px;
+	
+  width: 90vw;
+  max-width: 600px;
 	height: 120px;
 	border: 3px solid #cccccc;
 	padding: 5px;
+}
+
+.error-text {
+  color: var(--error);
 }
 
 .skills-container {
@@ -407,6 +430,10 @@ textarea {
   float: left;
 }
 
+.text-align-right {
+  text-align: right;
+}
+
 @media screen and (max-width: 950px) {
 
   main {
@@ -424,8 +451,18 @@ textarea {
     text-align: center;
     width: 100%;
   }
+
+  .mobile-nav-pages {
+    padding: 0;
+    margin: 6px 0 12px;
+  }
+
   .mobile-nav-pages li {
     margin: auto;
+  }
+
+  .mobile-nav-pages li h6 {
+    font-size: x-small;
   }
 
   footer {
@@ -462,10 +499,16 @@ textarea {
     display: block;
     width: 90%;
     
-  };
+  }
+
+  .details h4 {
+    text-align: center;
+    margin-top: var(--spacing-one);
+  }
 
   .img-thumbnail {
-    width: 300px;
+    max-width: 85%;
+    margin: 0 auto;
   }
   
   .card {
@@ -494,11 +537,20 @@ textarea {
   }
 
   .underline {
-    width: 90%;
+    width: 80%;
     margin: 5px auto 30px;
   }
 
-  .two-columns {
-    column-count: 1;
+  .small {
+    width: 60%;
+  }
+
+  .centerText {
+    margin-top: 50px;
+    font-size: 2rem;
+  }
+
+  .form-elements-container div label {
+    font-size: .8rem;
   }
 }

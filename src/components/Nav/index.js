@@ -1,31 +1,40 @@
-import React, { useEffect } from 'react';
 
 function Nav({ currentTab, setCurrentTab }) {
 
-    useEffect(() => {
-        document.title = currentTab;
+    const handleClick = (e) => {
 
-    }, [currentTab]);
+        const requestedPage = e.target.textContent;
+        if (requestedPage === "About Me") {
+            
+            setCurrentTab("about")
+            window.location.href="#"
+        }
+        if (requestedPage === "Portfolio") {
+            window.location.href = "#projects"
+            setCurrentTab("projects")
+        }
+        if (requestedPage === "Resume") {
+            window.location.href = "#resume"
+            setCurrentTab("resume")
+        }
+    }
 
     return (
         <>
             <header className="flex-row px-1">
-                <h1 className='mobile-title' onClick={() => setCurrentTab("About")}>
+                <h1 className='mobile-title' onClick={() => setCurrentTab("about")}>
                     Richard Huffman
                 </h1>  
                 <nav>
                     <ul className='flex-row mobile-nav-pages'>
-                        <li className={`mx-2 ${currentTab === "About" && 'navActive'}`}>
-                            <h6 onClick={() => setCurrentTab("About")}>About Me</h6>
+                        <li className={`mx-2 ${currentTab === "about" && 'navActive'}`}>
+                            <h6 onClick={handleClick}>About Me</h6>
                         </li>
-                        <li className={`mx-2 ${currentTab === "Projects" && 'navActive'}`}>
-                            <h6 onClick={() => setCurrentTab("Projects")}>Portfolio</h6>
+                        <li className={`mx-2 ${currentTab === "projects" && 'navActive'}`}>
+                            <h6 onClick={handleClick}>Portfolio</h6>
                         </li>
-                        <li className={`mx-2 ${currentTab === "Resume" && 'navActive'}`}>
-                            <h6 onClick={() => setCurrentTab("Resume")}>Resume</h6>
-                        </li>
-                        <li className={`mx-2 ${currentTab === "Contact" && 'navActive'}`}>
-                            <h6 onClick={() => setCurrentTab("Contact")}>Contact</h6>
+                        <li className={`mx-2 ${currentTab === "resume" && 'navActive'}`}>
+                            <h6 onClick={handleClick}>Resume</h6>
                         </li>
                     </ul>
                 </nav>

@@ -9,7 +9,7 @@ import Resume from './components/Resume';
 
 function App() {
 
-  const [currentTab, setCurrentTab] = useState("About");
+  const [currentTab, setCurrentTab] = useState("about");
 
   const [width, setWindowWidth] = useState(0);
 
@@ -42,19 +42,10 @@ function App() {
       </section>
       <main>
         {responsive.mobileUI && <div className='my-5 py-5'></div>}
-        {(currentTab === "About") ? (
-          <About mobileUI={responsive.mobileUI}></About>
-        ) : (
-          (currentTab === "Projects") ? (
-            <Projects></Projects>
-          ) : (
-            (currentTab === "Resume") ? (
-              <Resume></Resume>
-            ) : (
-            <ContactForm></ContactForm>
-            )
-          )
-        )}
+        <About setCurrentTab={setCurrentTab}></About>
+        <Projects setCurrentTab={setCurrentTab} mobileUI={responsive.mobileUI}></Projects>
+        <Resume setCurrentTab={setCurrentTab}></Resume>
+        <ContactForm setCurrentTab={setCurrentTab}></ContactForm>
       </main>
       <Footer></Footer>
     </div>

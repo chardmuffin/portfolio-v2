@@ -1,17 +1,18 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
+import FadeIn from '../FadeIn';
 
-function ProjectList() {
+function ProjectList( { setCurrentTab, mobileUI } ) {
 
     const projects = [
         {
             name: 'WIP - Bar Book',
-            tags: 'MongoDB, Express, React, Node, CSS, Apollo client, GraphQL',
-            description: `Bar Book is a mobile webapp I am working on that will make it easy to look up cocktail recipes very quickly. React-Bootstrap components are a starting point when building the mobile-first UI. Recipe search results are fetched from "TheCocktailDB.com" API.`,
+            tags: 'MongoDB, Express, React, Node, CSS, Apollo GraphQL',
+            description: `Bar Book is a mobile webapp I am working on that will make it easy to quickly look up cocktail recipes. React-Bootstrap components are a starting point when building this mobile-first UI. Recipe search results are fetched from "TheCocktailDB.com" API.`,
             link: 'https://bar-book.herokuapp.com/',
             repo: 'https://github.com/chardmuffin/bar-book',
-            photo: 'chasing-dreams.png'
+            photo: 'bar-book.png'
         },
         {
             name: 'Chasing Dreams',
@@ -32,7 +33,7 @@ function ProjectList() {
         {
             name: 'Code Probe',
             tags: 'HTML, CSS, Javascript',
-            description: 'Test your knowledge of Javacsript, CSS, HTML, and more! Upon starting the quiz, a timer counts down from 75 seconds and the user is prompted with several multiple-choice questions. (Questions and their answer choices appear in a randomized order each time the quiz is taken.)',
+            description: 'The quiz starts, a timer counts down from 75 seconds and the user is prompted with several multiple-choice questions. (Questions and answer choices appear in a randomized order each time the quiz is taken.)',
             link: 'https://chardmuffin.github.io/code-probe/',
             repo: 'https://github.com/chardmuffin/code-probe',
             photo: 'code-probe.png'
@@ -48,36 +49,37 @@ function ProjectList() {
     ];
     
     return (
-        <div className='projects'>
-            {projects.map((project) => (
-                <div className='card' key={project.name}>
-                    <div className='img-div'>
+        <section className='projects'>
+            {projects.map((project, index) => (
+                <FadeIn setCurrentTab={setCurrentTab} key={project.name}>
+                    <div className='card' >
                         <img
-                        src={require(`../../assets/portfolio/${project.photo}`)}
-                        alt={project.name}
-                        className="img-thumbnail mx-1"
+                            src={require(`../../assets/portfolio/${project.photo}`)}
+                            alt={project.name}
+                            className={`img-thumbnail ${!mobileUI && (index%2 === 0 ? " float-left" : " float-right")}`}
                         />
-                    </div>
-                    <div className='details'>
-                        <p><span>{project.name}</span></p>
-                        <p>
-                            <span>></span>{project.tags}
-                        </p>
-                        <p>
-                            <span>></span>{project.description}
-                        </p>
-                        <div className='buttons'>
-                            <a href={project.link} target="_blank" rel="noreferrer">
-                                <button>Live Site <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
-                            </a>
-                            <a href={project.repo} target="_blank" rel="noreferrer">
-                                <button><FontAwesomeIcon icon={faGithubSquare} /> Source Code</button>
-                            </a>
+                            
+                        <div className='details'>
+                            <h4 className={`my-5 ${(!mobileUI && index%2!==0) && "my-5 text-align-right"}`}><span>{project.name}</span></h4>
+                            <p className={`my-5 ${(!mobileUI && index%2!==0) && "my-5 text-align-right"}`}>
+                                <span>></span>{project.tags}
+                            </p>
+                            <p className={`my-5 ${(!mobileUI && index%2!==0) && "my-5 text-align-right"}`}>
+                                <span>></span>{project.description}
+                            </p>
+                            <div className='buttons'>
+                                <a href={project.link} target="_blank" rel="noreferrer">
+                                    <button>Deployed Site <FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
+                                </a>
+                                <a href={project.repo} target="_blank" rel="noreferrer">
+                                    <button><FontAwesomeIcon icon={faGithubSquare} /> Source Code</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </FadeIn>
             ))}
-        </div>
+        </section>
     );
 };
 

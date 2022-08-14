@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { validateEmail } from "../../utils/helpers";
+import emailjs from "emailjs-com";
+import FadeIn from "../FadeIn";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
-function ContactForm() {
+function ContactForm({ setCurrentTab }) {
 
     const [formState, setFormState] = useState({ name: "", email: "", message: "" });
     const { name, email, message } = formState;
+    const form = useRef();
 
     const [errorMessage, setErrorMessage] = useState("");
 
@@ -28,39 +33,55 @@ function ContactForm() {
         }
     }
 
-    function handleSubmit(e) {
+    function sendEmail(e) {
         e.preventDefault();
-        console.log(formState);
+
+        if (formState.name !== "" && formState.email !== "" && formState.message !== "") {
+            emailjs.sendForm('service_e8d0896', 'template_zmvhf4w', form.current, 'NcJNWdfU8mGyB-cao')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+        } else {
+            setErrorMessage("Please complete the form.")
+        }
     }
 
     return (
-        <section>
-            <h1 className='centerText'>contact me</h1>
-            <div className='underline'></div>
-            <p>
-                Please leave me a message!
-            </p>
-            <form id="contact-form" onSubmit={handleSubmit}>
-                <p></p>
-                <div>
-                    <label htmlFor="Name">Name:</label>
-                    <input type="text" name="Name" defaultValue={name} onBlur={handleChange}></input>
-                </div>
-                <div>
-                    <label htmlFor="Email">Email address:</label>
-                    <input type="email" name="Email" defaultValue={email} onBlur={handleChange}></input>
-                </div>
-                <div>
-                    <label htmlFor="Message">Message:</label>
-                    <textarea name="Message" rows="5" defaultValue={message} onBlur={handleChange} />
-                </div>
-                {errorMessage && (
-                    <div>
-                        <p className="error-text">{errorMessage}</p>
+        <section className="contact">
+            <FadeIn setCurrentTab={setCurrentTab}>
+                <h1 className='resume-contact centerText'>contact me</h1>
+                <div className='underline small'></div>
+            </FadeIn>
+            <FadeIn setCurrentTab={setCurrentTab}>
+                <form ref={form} id="resume-contact contact-form" onSubmit={sendEmail}>
+                    <a href={'https://www.linkedin.com/in/richard-huffman-52806b137'} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faLinkedin} /> </a>
+                    <div className="form-elements-container">
+                        <div>
+                            <label htmlFor="name">Name:</label>
+                            <br></br>
+                            <input type="text" name="name" defaultValue={name} onBlur={handleChange}></input>
+                        </div>
+                        <div>
+                            <label htmlFor="email">Email address:</label>
+                            <br></br>
+                            <input type="email" name="email" defaultValue={email} onBlur={handleChange}></input>
+                        </div>
+                        <div>
+                            <label htmlFor="message">Message:</label>
+                            <br></br>
+                            <textarea name="message" rows="5" defaultValue={message} onBlur={handleChange} />
+                        </div>
+                        {errorMessage && (
+                            <div>
+                                <p className="error-text">{errorMessage}</p>
+                            </div>
+                        )}
+                        <button type="submit">Submit</button>
                     </div>
-                )}
-                <button type="submit">Submit</button>
-            </form>
+                </form>
+            </FadeIn>
         </section>
     );
 }
