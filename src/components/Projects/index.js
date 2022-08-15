@@ -6,7 +6,7 @@ function Projects({ setCurrentTab, mobileUI }) {
     return (
         <section id="projects">
             <FadeIn>
-                <h1 className='portfolio centerText'>my projects</h1>
+                <h1 className='welcome centerText'>my projects</h1>
                 <div className='underline'></div>
             </FadeIn>
             <ProjectList setCurrentTab={setCurrentTab} mobileUI={mobileUI}></ProjectList>
