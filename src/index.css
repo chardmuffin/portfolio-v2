@@ -139,7 +139,7 @@ nav ul {
   transition-delay: 90ms;
 }
 
-/* do not change padding-top or navigation will get messed up */
+/* do not lower the padding-top or navigation will get messed up! */
 .centerText {
   text-align: center;
   padding-top: 150px; 
@@ -437,6 +437,14 @@ textarea {
 
 @media screen and (max-width: 950px) {
 
+  .spacer {
+    height: 120px;
+  }
+
+  #about,#projects,#resume {
+    scroll-margin-top: 100px;
+  }
+
   main {
     max-width: 100%;
     padding: 50px 0px;
@@ -472,18 +480,11 @@ textarea {
   }
   
   .centerText {
-    padding-top: var(--spacing-two);
+    padding-top: var(--spacing-five);
   }
 
   .about {
     width: 80%;
-  }
-
-/* at this width and below, headshot is moved to bottom of <section> in components/About/index.js */
-  .headshot {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   .underline {
@@ -530,6 +531,10 @@ textarea {
 /* if using mobile */
 @media screen and (max-width: 575px) {
 
+  .spacer {
+    height: 50px;
+  }
+
   .hero {
     background-attachment: scroll;
   }
@@ -537,11 +542,7 @@ textarea {
   header h1 {
     font-size: 10px;
   }
-
-  .headshot {
-    width: 50%;
-  }
-
+  
   .underline {
     width: 80%;
     margin: 5px auto 30px;
@@ -553,6 +554,7 @@ textarea {
 
   .centerText {
     margin-top: 50px;
+    padding-top: var(--spacing-two);
     font-size: 2rem;
   }
 

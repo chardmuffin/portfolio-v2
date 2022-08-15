@@ -41,7 +41,7 @@ function App() {
         <div className="hero"></div>
       </section>
       <main>
-        {responsive.mobileUI && <div className='my-5 py-5'></div>}
+        {responsive.mobileUI && <div className='spacer welcome'></div>}
         <About setCurrentTab={setCurrentTab}></About>
         <Projects setCurrentTab={setCurrentTab} mobileUI={responsive.mobileUI}></Projects>
         <Resume setCurrentTab={setCurrentTab}></Resume>
