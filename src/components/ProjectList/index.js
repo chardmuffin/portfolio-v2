@@ -12,7 +12,7 @@ function ProjectList( { setCurrentTab, mobileUI } ) {
             description: `The portofolio you are viewing is a single page app built from scratch using React.`,
             link: 'https://chardmuffin.github.io/portfolio-v2/',
             repo: 'https://github.com/chardmuffin/portfolio-v2',
-            photo: 'bar-book.png'
+            photo: 'portfolio.png'
         },
         {
             name: 'Bar Book',
