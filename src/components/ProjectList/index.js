@@ -17,7 +17,7 @@ function ProjectList( { setCurrentTab, mobileUI } ) {
         {
             name: 'Bar Book',
             tags: 'MongoDB, Express, React, Node, JavaScript, CSS, Apollo GraphQL',
-            description: `Bar Book is a solo project I made while working as a bartender to make it easier to quickly look up cocktail recipes. React-Bootstrap components were used as a starting point when building the mobile-first UI. Recipe search results are displayed via query on the Drinks DB (using Mongoose). Some sections of the app require creating an account. Once logged in (users are authorized by JWT), users are able to add custom drink recipes to the DB, view their profile, and create a Bar Book of recipes.`,
+            description: `Bar Book is a solo project I made while working as a bartender to make it easier to quickly look up cocktail recipes. React-Bootstrap components were used as a starting point when building the mobile-first UI. Recipe search results are displayed via query on the Drinks DB (using Apollo GraphQL). Some sections of the app require creating an account. Once logged in (users are authorized by JWT), users are able to add custom drink recipes to the DB, view their profile, and create a Bar Book of recipes.`,
             link: 'https://bar-book.herokuapp.com/',
             repo: 'https://github.com/chardmuffin/bar-book',
             photo: 'bar-book.png'
