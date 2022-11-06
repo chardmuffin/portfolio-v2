@@ -45,14 +45,6 @@ function ProjectList( { setCurrentTab, mobileUI } ) {
             link: 'https://chardmuffin.github.io/code-probe/',
             repo: 'https://github.com/chardmuffin/code-probe',
             photo: 'code-probe.png'
-        },
-        {
-            name: 'Weather Pal',
-            tags: 'HTML, CSS, JavaScript',
-            description: 'Utlizes OpenWeatherMap API to provide a summary of the current weather and a 5-day forecast for any major city.',
-            link: 'https://chardmuffin.github.io/weather-pal/',
-            repo: 'https://github.com/chardmuffin/weather-pal',
-            photo: 'weather-pal.png'
         }
     ];
     
@@ -61,14 +53,14 @@ function ProjectList( { setCurrentTab, mobileUI } ) {
             {projects.map((project, index) => (
                 <FadeIn setCurrentTab={setCurrentTab} key={project.name}>
                     <div className='card' >
+                        <h4 className="my-5 text-align-center"><span>{project.name}</span></h4>
+                            
                         <img
                             src={require(`../../assets/portfolio/${project.photo}`)}
                             alt={project.name}
                             className={`img-thumbnail ${!mobileUI && (index%2 === 0 ? " float-left" : " float-right")}`}
                         />
-                            
                         <div className='details'>
-                            <h4 className={`my-5 ${(!mobileUI && index%2!==0) && "my-5 text-align-right"}`}><span>{project.name}</span></h4>
                             <p className={`my-5 ${(!mobileUI && index%2!==0) && "my-5 text-align-right"}`}>
                                 <span>></span>{project.tags}
                             </p>
