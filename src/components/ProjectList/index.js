@@ -7,17 +7,9 @@ function ProjectList( { setCurrentTab, mobileUI } ) {
 
     const projects = [
         {
-            name: 'Portfolio',
-            tags: 'React, Node, CSS, JavaScript',
-            description: `The portofolio you are viewing is a single page app built from scratch using React.`,
-            link: 'https://chardmuffin.github.io/portfolio-v2/',
-            repo: 'https://github.com/chardmuffin/portfolio-v2',
-            photo: 'portfolio.png'
-        },
-        {
             name: 'Bar Book',
             tags: 'MongoDB, Express, React, Node, JavaScript, CSS, Apollo GraphQL',
-            description: `Bar Book is a solo project I made while working as a bartender to make it easier to quickly look up cocktail recipes. React-Bootstrap components were used as a starting point when building the mobile-first UI. Recipe search results are displayed via query on the Drinks DB (using Apollo GraphQL). Some sections of the app require creating an account. Once logged in (users are authorized by JWT), users are able to add custom drink recipes to the DB, view their profile, and create a Bar Book of recipes.`,
+            description: `Bar Book is a project I made for my own use while working as a beginner bartender to make it easier for me to quickly look up cocktail recipes. React-Bootstrap components were used as a starting point to build the mobile-first UI. Recipe search results are displayed via a query on the Drinks DB (using Apollo GraphQL). Some sections of the app require creating an account. Once logged in (users are authorized by JWT), users are able to add custom drink recipes to the DB and view their profile.`,
             link: 'https://bar-book.herokuapp.com/',
             repo: 'https://github.com/chardmuffin/bar-book',
             photo: 'bar-book.png'
@@ -37,6 +29,14 @@ function ProjectList( { setCurrentTab, mobileUI } ) {
             link: 'https://chardmuffin.github.io/mental-health-buddy/',
             repo: 'https://github.com/chardmuffin/mental-health-buddy',
             photo: 'mental-health-buddy.png'
+        },
+        {
+            name: 'Fully Immersive Game Developer Experience Simulator (FIGDES)',
+            tags: 'Godot, GDScript, JSON',
+            description: '(Not a web project.) I started building a game in Spring of 2020. After researching game engines I taught myself how to use Godot and GDScript. Although it is currently not finished, my game features an original game concept, original sprites, pixel perfect rendering, and a self-produced chiptune soundtrack.',
+            link: 'https://chardmuffin.github.io/FIGDES/',
+            repo: 'https://github.com/chardmuffin/FIGDES',
+            photo: 'FIGDES.png'
         },
         {
             name: 'Code Probe',
