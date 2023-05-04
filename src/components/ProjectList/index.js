@@ -7,17 +7,25 @@ function ProjectList( { setCurrentTab, mobileUI } ) {
 
     const projects = [
         {
+            name: 'artbychard.com',
+            tags: 'MySQL, Express, React, NodeJS, JavaScript, Material UI, Docker, AWS',
+            description: `An online gallery featuring original oil paintings and other work for sale. The site is built with React.js and powered by Stripe for secure purchases over HTTPS.`,
+            link: 'https://www.artbychard.com/',
+            repo: 'https://github.com/chardmuffin/art-portfolio',
+            photo: 'artbychard.png'
+        },
+        {
             name: 'Bar Book',
-            tags: 'MongoDB, Express, React, Node, JavaScript, CSS, Apollo GraphQL',
-            description: `Bar Book is a project I made for my own use while working as a beginner bartender to make it easier for me to quickly look up cocktail recipes. React-Bootstrap components were used as a starting point to build the mobile-first UI. Recipe search results are displayed via a query on the Drinks DB (using Apollo GraphQL). Some sections of the app require creating an account. Once logged in (users are authorized by JWT), users are able to add custom drink recipes to the DB and view their profile.`,
+            tags: 'MongoDB, Express, React, NodeJS, JavaScript, CSS, Apollo GraphQL',
+            description: `I made Bar Book for my own use while working as a beginner bartender to make it easier for me to quickly look up cocktail recipes. React-Bootstrap components were used as a starting point to build the mobile-first UI. Recipe search results are displayed via a query on the Drinks DB (using Apollo GraphQL). Some sections of the app require creating an account. Once logged in (users are authorized by JWT), users are able to add custom drink recipes to the DB and view their profile.`,
             link: 'https://bar-book.herokuapp.com/',
             repo: 'https://github.com/chardmuffin/bar-book',
             photo: 'bar-book.png'
         },
         {
             name: 'Chasing Dreams',
-            tags: 'MongoDB, Express, React, Node, JavaScript, CSS',
-            description: 'Chasing Dreams was a group project. We used the MERN stack to build a travel application that helps users to find hotels and attractions at locations all over the world. Search results are fetched via API. A different API is leveraged to attempt to include a picture with each search result (my responsibility). Users can save their favorite search results.',
+            tags: 'MongoDB, Express, React, NodeJS, JavaScript, CSS',
+            description: 'A group project. We used the MERN stack to build a travel application that helps users to find hotels and attractions at locations all over the world. Search results are fetched via API. A different API is leveraged to attempt to include a picture with each search result (my responsibility). Users can save their favorite search results.',
             link: 'https://chasing-dreams.herokuapp.com/',
             repo: 'https://github.com/Mikekuney/Chasing-Dreams',
             photo: 'chasing-dreams.png'
@@ -25,7 +33,7 @@ function ProjectList( { setCurrentTab, mobileUI } ) {
         {
             name: 'Mental Health Buddy',
             tags: 'HTML, CSS, JavaScript',
-            description: 'Mental Health Buddy was a group project, although I built the majority of this one. The app displays quotes from any of these categories (selected by the user): advice slips, dad jokes, zen quotes, and stoicism quotes. (A different API is leveraged for each category.) Favorite quotes can be saved and viewed via the hamburger menu. The color scheme is customizable. App also allows users to track a list of TODOs.',
+            description: 'A group project. The app displays quotes from any of these categories (selected by the user): advice slips, dad jokes, zen quotes, and stoicism quotes. (A different API is leveraged for each category.) Favorite quotes can be saved and viewed via the hamburger menu. The color scheme is customizable. App also allows users to track a list of TODOs. I was responsible for everything except TODOs functionality.',
             link: 'https://chardmuffin.github.io/mental-health-buddy/',
             repo: 'https://github.com/chardmuffin/mental-health-buddy',
             photo: 'mental-health-buddy.png'
@@ -52,28 +60,50 @@ function ProjectList( { setCurrentTab, mobileUI } ) {
         <section className='projects'>
             {projects.map((project, index) => (
                 <FadeIn setCurrentTab={setCurrentTab} key={project.name}>
-                    <div className='card' >
-                        <h4 className="my-5 text-align-center"><span>{project.name}</span></h4>
-                            
-                        <img
-                            src={require(`../../assets/portfolio/${project.photo}`)}
-                            alt={project.name}
-                            className={`img-thumbnail ${!mobileUI && (index%2 === 0 ? " float-left" : " float-right")}`}
-                        />
-                        <div className='details'>
-                            <p className={`my-5 ${(!mobileUI && index%2!==0) && "my-5 text-align-right"}`}>
-                                <span>></span>{project.tags}
-                            </p>
-                            <p className={`my-5 ${(!mobileUI && index%2!==0) && "my-5 text-align-right"}`}>
-                                <span>></span>{project.description}
-                            </p>
-                            <div className='buttons'>
-                                <a href={project.link} target="_blank" rel="noreferrer">
-                                    <button>Deployed Site<br></br><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></button>
-                                </a>
-                                <a href={project.repo} target="_blank" rel="noreferrer">
-                                    <button><FontAwesomeIcon icon={faGithubSquare} /><br></br>Source Code</button>
-                                </a>
+                    <div className='card'>
+                        <h4 className='my-5 text-align-center'>
+                            <span>{project.name}</span>
+                        </h4>
+            
+                        <div
+                            className='grid-container'
+                            style={mobileUI
+                                ? { gridTemplateAreas: "'img' 'details'" }
+                                : index % 2 === 0
+                                ? { gridTemplateAreas: "'img details'" }
+                                : { gridTemplateAreas: "'details img'" }
+                            }
+                        >
+                            <img
+                                src={require(`../../assets/portfolio/${project.photo}`)}
+                                alt={project.name}
+                                className='img-thumbnail'
+                            />
+                            <div className='details'>
+                                <p className='my-4 tags'>
+                                    <span>></span>
+                                    {project.tags}
+                                </p>
+                                <p className='my-3 description'>
+                                    <span>></span>
+                                    {project.description}
+                                </p>
+                                <div className='buttons'>
+                                    <a href={project.link} target='_blank' rel='noreferrer'>
+                                        <button>
+                                            Deployed Site
+                                            <br />
+                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                                        </button>
+                                    </a>
+                                    <a href={project.repo} target='_blank' rel='noreferrer'>
+                                        <button>
+                                            <FontAwesomeIcon icon={faGithubSquare} />
+                                            <br />
+                                            Source Code
+                                        </button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
