@@ -5,7 +5,7 @@ function About({ setCurrentTab }) {
     return (
     <div id="about">
         <FadeIn setCurrentTab={setCurrentTab}>
-            <h1 className='welcome centerText'>richard huffman</h1>
+            <h1 className='welcome topText'>richard huffman</h1>
             <div className='underline'></div>
         </FadeIn>
         <section className='about'>

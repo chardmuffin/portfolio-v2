@@ -32,7 +32,7 @@ body {
   padding: 0;
   font-weight: 400;
   line-height: 1.5;
-  font-size: 14px;
+  font-size: 1rem;
   letter-spacing: .1em;
   background: var(--dark);
   color: var(--light);
@@ -139,10 +139,14 @@ nav ul {
   transition-delay: 90ms;
 }
 
-/* do not lower the padding-top or navigation will get messed up! */
+.topText {
+  text-align: center;
+  padding-top: 60px;
+}
+
 .centerText {
   text-align: center;
-  padding-top: 100px; 
+  padding-top: 150px; 
 }
 
 .underline {
@@ -283,13 +287,11 @@ nav li {
 
 .card p {
   color: var(--light);
-  font-size: .9rem;
 }
 
 .card p span {
   color: var(--primary);
   margin: 0 15px;
-  font-size: 1rem;
 }
 
 .buttons {
@@ -369,10 +371,9 @@ ul {
 ul li {
   position: relative;
   padding-left: 2.5rem;
-  line-height: 1.4rem;
 }
 
-ul li:before {
+main ul li:before {
   content: ">";
   color: var(--primary);
   position: absolute;

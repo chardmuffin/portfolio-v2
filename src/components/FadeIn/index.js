@@ -18,9 +18,13 @@ function FadeIn({ setCurrentTab, ...props }) {
             setCurrentTab("about");
             document.title="Richard Huffman Developer";
           }
-          else if (entry.target.firstElementChild.className.includes("resume-contact")) {
+          else if (entry.target.firstElementChild.className.includes("resume")) {
             setCurrentTab("resume");
             document.title="Richard Huffman - Resume";
+          }
+          else if (entry.target.firstElementChild.className.includes("contact")) {
+            setCurrentTab("contact");
+            document.title="Richard Huffman - Contact";
           }
         }
       });

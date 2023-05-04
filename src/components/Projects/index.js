@@ -5,7 +5,7 @@ function Projects({ setCurrentTab, mobileUI }) {
 
     return (
         <section id="projects">
-            <FadeIn>
+            <FadeIn setCurrentTab={setCurrentTab}>
                 <h1 className='welcome centerText'>my projects</h1>
                 <div className='underline'></div>
             </FadeIn>

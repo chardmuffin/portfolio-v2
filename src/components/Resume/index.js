@@ -3,19 +3,14 @@ import FadeIn from "../FadeIn";
 function Resume({ setCurrentTab }) {
 
   return (
-    <section id="resume" className='my-2'>
+    <section id="resume" className='my-5'>
       <FadeIn setCurrentTab={setCurrentTab}>
-        <h2 className='resume-contact centerText'>resume</h2>
+        <h2 className='resume centerText'>resume</h2>
         <div className='underline small'></div>
       </FadeIn>
-      <FadeIn>
-        <a href={require("../../assets/resume.pdf")} download="resume-RHuffman">
-          <button className="mx-auto my-5">DOWNLOAD FULL RESUME</button>
-        </a>
-      </FadeIn>
       <div className='resume-content'>
-        <FadeIn>
-          <div className='skills'>
+        <FadeIn setCurrentTab={setCurrentTab}>
+          <div className='resume skills'>
             <div className='skills-grid'>
               <div className='skills-column'>
                 <h4>Technical Skills</h4>
@@ -55,8 +50,8 @@ function Resume({ setCurrentTab }) {
             </div>
           </div>
         </FadeIn>
-        <FadeIn>
-          <div className='education'>
+        <FadeIn setCurrentTab={setCurrentTab}>
+          <div className='resume education'>
             <h3>Education</h3>
             <div className='education-item'>
               <div className='school-info'>
@@ -82,6 +77,11 @@ function Resume({ setCurrentTab }) {
           </div>
         </FadeIn>
       </div>
+      <FadeIn setCurrentTab={setCurrentTab}>
+        <a className="resume" href={require("../../assets/resume.pdf")} download="resume-RHuffman">
+          <button className="mx-auto my-5">DOWNLOAD FULL RESUME</button>
+        </a>
+      </FadeIn>
     </section>
   )
 }

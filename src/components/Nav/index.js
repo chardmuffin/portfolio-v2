@@ -17,6 +17,10 @@ function Nav({ currentTab, setCurrentTab }) {
             window.location.href = "#resume"
             setCurrentTab("resume")
         }
+        if (requestedPage === "Contact") {
+            window.location.href = "#contact"
+            setCurrentTab("contact")
+        }
     }
 
     return (
@@ -35,6 +39,9 @@ function Nav({ currentTab, setCurrentTab }) {
                         </li>
                         <li className={`mx-2 ${currentTab === "resume" && 'navActive'}`}>
                             <h6 onClick={handleClick}>Resume</h6>
+                        </li>
+                        <li className={`mx-2 ${currentTab === "contact" && 'navActive'}`}>
+                            <h6 onClick={handleClick}>Contact</h6>
                         </li>
                     </ul>
                 </nav>

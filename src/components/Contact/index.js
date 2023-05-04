@@ -51,12 +51,13 @@ function ContactForm({ setCurrentTab }) {
     return (
         <section className="contact">
             <FadeIn setCurrentTab={setCurrentTab}>
-                <h1 className='resume-contact centerText'>contact me</h1>
+                <h1 className='contact centerText'>contact me</h1>
                 <div className='underline small'></div>
             </FadeIn>
             <FadeIn setCurrentTab={setCurrentTab}>
-                <form ref={form} id="resume-contact contact-form" onSubmit={sendEmail}>
+                <form ref={form} id="contact contact-form" onSubmit={sendEmail}>
                     <a href={'https://www.linkedin.com/in/richard-huffman-52806b137'} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faLinkedin} /> </a>
+                    
                     <div className="form-elements-container">
                         <div>
                             <label htmlFor="name">Name:</label>
