@@ -9,7 +9,16 @@ function ProjectList( { setCurrentTab, mobileUI } ) {
         {
             name: 'artbychard.com',
             tags: 'MySQL, Express, React, NodeJS, JavaScript, Material UI, Docker, AWS',
-            description: `An online gallery featuring original oil paintings and other work for sale. The site is built with React.js and powered by Stripe for secure purchases over HTTPS.`,
+            description: `Online gallery featuring original fine art for sale.
+            Includes: responsive UI,
+            unique options selection for each product,
+            product filtering via search page,
+            site owner communication via contact page,
+            light/dark display setting and cart contents maintained between visits,
+            checkout page with forms for entering shipping/payment information,
+            payment complete page with optional email sign-up to receive order updates,
+            and login protected admin dashboard for managing the database (including adding, editing, and deleting products).
+            The site is powered by Stripe for secure purchases over HTTPS.`,
             link: 'https://www.artbychard.com/',
             repo: 'https://github.com/chardmuffin/art-portfolio',
             photo: 'artbychard.png'
